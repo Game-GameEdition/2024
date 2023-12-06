@@ -16,7 +16,8 @@ import edu.wpi.first.wpilibj.motorcontrol.Spark;
  * the code necessary to operate a robot with tank drive.
  */
 public class Robot extends TimedRobot {
-  private DifferentialDrive m_myRobot;
+  private DifferentialDrive m_myRobotFront; //This used to just be m_myRobot.  We made it Left and added a Right.  Will it work?  No-one knowws
+  private DifferentialDrive m_myRobotBack;
   private Joystick m_leftStick;
   private Joystick m_rightStick;
   private final Joystick stick = new Joystick(0);
@@ -32,17 +33,20 @@ public class Robot extends TimedRobot {
     // We need to invert one side of the drivetrain so that positive voltages
     // result in both sides moving forward. Depending on how your robot's
     // gearbox is constructed, you might have to invert the left side instead.
+    //Also something like this happens at the bottom so we might not need this at all
     rightMotor1.setInverted(true);
     rightMotor2.setInverted(true);
 
-    m_myRobot = new DifferentialDrive(leftMotor1, leftMotor2);
-    m_myRobot = new DifferentialDrive(rightMotor1, rightMotor2);
+    m_myRobotFront = new DifferentialDrive(leftMotor1, rightMotor1);
+    m_myRobotBack = new DifferentialDrive(leftMotor2, rightMotor2);
     m_leftStick = new Joystick(0);
     m_rightStick = new Joystick(1);
   }
 
+
   @Override
   public void teleopPeriodic() {
-    m_myRobot.tankDrive(-m_leftStick.getY(), -m_rightStick.getY());
+    m_myRobotFront.tankDrive(m_leftStick.getY(), -m_rightStick.getY()); //+ left, inverse I changed these from all negative. Needed?
+    m_myRobotBack.tankDrive(-m_leftStick.getY(), m_rightStick.getY()); //+ right, inverse 
   }
 }
