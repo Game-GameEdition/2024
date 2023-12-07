@@ -36,6 +36,11 @@ public class Robot extends TimedRobot {
     // gearbox is constructed, you might have to invert the left side instead.
     //Also something like this happens at the bottom so we might not need this at all
     //CHANGEEE PLEASE PLEASE PLEASEE
+    /*
+     * Hello this is aiden hogan speaking and we are going to becoding today so I think that this is how we code and go super seuper code
+     * Okay for today we satart with System.out.printIn("Seth sucks at println (true)");
+     * Seth has goldfish memeory confirme d 
+     */
     rightMotor1.setInverted(true);
     rightMotor2.setInverted(true);
 
