@@ -35,6 +35,7 @@ public class Robot extends TimedRobot {
     // result in both sides moving forward. Depending on how your robot's
     // gearbox is constructed, you might have to invert the left side instead.
     //Also something like this happens at the bottom so we might not need this at all
+    //CHANGEEE PLEASE PLEASE PLEASEE
     rightMotor1.setInverted(true);
     rightMotor2.setInverted(true);
 
