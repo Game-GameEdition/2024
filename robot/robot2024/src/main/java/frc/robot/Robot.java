@@ -39,7 +39,7 @@ public class Robot extends TimedRobot {
     /*
      * Hello this is aiden hogan speaking and we are going to becoding today so I think that this is how we code and go super seuper code
      * Okay for today we satart with System.out.printIn("Seth sucks at println (true)");
-     * Seth has goldfish memeory confirme d 
+     * Seth has goldfish memeory confirme d    Change osoaoaoaoaoa
      */
     rightMotor1.setInverted(true);
     rightMotor2.setInverted(true);
